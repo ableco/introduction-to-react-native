@@ -8,12 +8,14 @@ import React, {
 } from 'react-native';
 import styles from '../styles/router';
 import DetailComponent from './detail';
+import LoadingComponent from './loading';
 
 class ListComponent extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
+      loading: true,
       dataSource: new ListView.DataSource({
         rowHasChanged: (row1, row2) => row1 != row2
       })
@@ -25,12 +27,16 @@ class ListComponent extends Component {
     .then((response) => response.json())
     .then((responseData) => {
       this.setState({
+        loading: false,
         dataSource: this.state.dataSource.cloneWithRows(responseData.results)
       })
     })
   }
 
   render() {
+    if ( this.state.loading ) {
+      return <LoadingComponent />;
+    }
     return (
       <ListView
         style={styles.list.content}

@@ -4,6 +4,7 @@ var { StyleSheet } = React;
 export default StyleSheet.create({
   content: {
     padding: 12,
+    marginTop: 64,
   },
   wrapper: {
     flexDirection: 'row',

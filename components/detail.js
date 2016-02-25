@@ -1,7 +1,6 @@
 import React, {
   Component,
   Image,
-  ListView,
   Text,
   View,
 } from 'react-native';
