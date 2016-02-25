@@ -1,17 +1,12 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
-'use strict';
 import React, {
   AppRegistry,
   Component,
   Image,
   ListView,
   Text,
-  StyleSheet,
   View,
 } from 'react-native';
+import styles from './styles/router';
 
 class mySweetProject extends Component {
 
@@ -24,15 +19,6 @@ class mySweetProject extends Component {
     }
   }
 
-  render() {
-    return (
-      <ListView
-        dataSource={this.state.dataSource}
-        renderRow={this._renderRow.bind(this)}
-      />
-    );
-  }
-
   componentWillMount() {
     fetch('http://api.randomuser.me/?results=10&nat=us')
     .then((response) => response.json())
@@ -43,16 +29,28 @@ class mySweetProject extends Component {
     })
   }
 
+  render() {
+    return (
+      <ListView
+        style={styles.list.content}
+        dataSource={this.state.dataSource}
+        renderRow={this._renderRow.bind(this)}
+      />
+    );
+  }
+
   _renderRow(data) {
     return (
-      <View>
+      <View style={styles.list.wrapper}>
         <Image
-          style={{width: 50, height: 50}}
+          style={styles.list.picture}
           source={{uri: data.user.picture.medium}}
           />
         <View>
-          <Text>{data.user.name.first}</Text>
-          <Text>{data.user.name.last}</Text>
+          <View style={styles.list.name}>
+            <Text style={styles.list.firstName}>{data.user.name.first}</Text>
+            <Text style={styles.list.lastName}>{data.user.name.last}</Text>
+          </View>
           <Text>{data.user.email}</Text>
         </View>
       </View>
