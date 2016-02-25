@@ -3,14 +3,15 @@ var { StyleSheet } = React;
 
 export default StyleSheet.create({
   content: {
-    padding: 22,
+    padding: 12,
   },
   wrapper: {
     flexDirection: 'row',
     alignItems: 'center',
     marginVertical: 6,
     backgroundColor: '#eee',
-    padding: 11,
+    padding: 12,
+    borderRadius: 6,
   },
   name: {
     flexDirection: 'row'
@@ -25,6 +26,6 @@ export default StyleSheet.create({
   picture: {
     width: 50,
     height: 50,
-    marginRight: 11,
+    marginRight: 12,
   }
 })
