@@ -7,55 +7,57 @@ import React, {
   AppRegistry,
   Component,
   Image,
-  StyleSheet,
+  ListView,
   Text,
-  View
+  StyleSheet,
+  View,
 } from 'react-native';
 
 class mySweetProject extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      dataSource: new ListView.DataSource({
+        rowHasChanged: (row1, row2) => row1 != row2
+      })
+    }
+  }
+
   render() {
     return (
-      <View style={styles.container}>
-        <Image style={styles.image}
-          source={{uri: 'http://frostney.github.io/talks/react-native/slides/images/react-logo.png'}}
-          />
-        <Text style={styles.welcome}>
-          Welcome to ReactJS Lima
-        </Text>
-        <Text style={styles.yell}>
-          This is Able!!!
-        </Text>
-        <Image
-          source={require('./images/300.jpg')}
-        />
-      </View>
+      <ListView
+        dataSource={this.state.dataSource}
+        renderRow={this._renderRow.bind(this)}
+      />
     );
   }
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fefefe',
-  },
-  welcome: {
-    fontSize: 24,
-    textAlign: 'center',
-    margin: 10,
-    marginVertical: 20,
-  },
-  yell: {
-    fontSize: 48,
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 15,
-  },
-  image: {
-    width: 150,
-    height: 150,
-  },
-});
+  componentWillMount() {
+    fetch('http://api.randomuser.me/?results=10&nat=us')
+    .then((response) => response.json())
+    .then((responseData) => {
+      this.setState({
+        dataSource: this.state.dataSource.cloneWithRows(responseData.results)
+      })
+    })
+  }
+
+  _renderRow(data) {
+    return (
+      <View>
+        <Image
+          style={{width: 50, height: 50}}
+          source={{uri: data.user.picture.medium}}
+          />
+        <View>
+          <Text>{data.user.name.first}</Text>
+          <Text>{data.user.name.last}</Text>
+          <Text>{data.user.email}</Text>
+        </View>
+      </View>
+    )
+  }
+}
 
 AppRegistry.registerComponent('mySweetProject', () => mySweetProject);
