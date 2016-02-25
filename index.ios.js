@@ -6,6 +6,7 @@
 import React, {
   AppRegistry,
   Component,
+  Image,
   StyleSheet,
   Text,
   View
@@ -15,16 +16,18 @@ class mySweetProject extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Image style={styles.image}
+          source={{uri: 'http://frostney.github.io/talks/react-native/slides/images/react-logo.png'}}
+          />
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Welcome to ReactJS Lima
         </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
+        <Text style={styles.yell}>
+          This is Able!!!
         </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+        <Image
+          source={require('./images/300.jpg')}
+        />
       </View>
     );
   }
@@ -35,17 +38,23 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#fefefe',
   },
   welcome: {
-    fontSize: 20,
+    fontSize: 24,
     textAlign: 'center',
     margin: 10,
+    marginVertical: 20,
   },
-  instructions: {
+  yell: {
+    fontSize: 48,
     textAlign: 'center',
     color: '#333333',
-    marginBottom: 5,
+    marginBottom: 15,
+  },
+  image: {
+    width: 150,
+    height: 150,
   },
 });
 
