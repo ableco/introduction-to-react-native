@@ -3,9 +3,11 @@ import React, {
   Image,
   ListView,
   Text,
+  TouchableHighlight,
   View,
 } from 'react-native';
 import styles from '../styles/router';
+import DetailComponent from './detail';
 
 class ListComponent extends Component {
 
@@ -40,20 +42,31 @@ class ListComponent extends Component {
 
   _renderRow(data) {
     return (
-      <View style={styles.list.wrapper}>
-        <Image
-          style={styles.list.picture}
-          source={{uri: data.user.picture.medium}}
-          />
-        <View>
-          <View style={styles.list.name}>
-            <Text style={styles.list.firstName}>{data.user.name.first}</Text>
-            <Text style={styles.list.lastName}>{data.user.name.last}</Text>
+      <TouchableHighlight underlayColor='transparent' onPress={this._pushDetail.bind(this, data.user)}>
+        <View style={styles.list.wrapper}>
+          <Image
+            style={styles.list.picture}
+            source={{uri: data.user.picture.medium}}
+            />
+          <View>
+            <View style={styles.list.name}>
+              <Text style={styles.list.firstName}>{data.user.name.first}</Text>
+              <Text style={styles.list.lastName}>{data.user.name.last}</Text>
+            </View>
+            <Text>{data.user.email}</Text>
           </View>
-          <Text>{data.user.email}</Text>
         </View>
-      </View>
+      </TouchableHighlight>
     )
+  }
+
+  _pushDetail(user) {
+    this.props.navigator.push({
+      title: user.username,
+      component: DetailComponent,
+      backButtonTitle: 'Back',
+      passProps: {user: user},
+    });
   }
 }
 

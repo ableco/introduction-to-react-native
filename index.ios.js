@@ -19,7 +19,7 @@ class mySweetProject extends Component {
         titleTextColor= '#efefef'
         initialRoute={{
           component: ListComponent,
-          title: 'My Sweet Project',
+          title: 'List',
           rightButtonTitle: 'Search'
         }}
         />
