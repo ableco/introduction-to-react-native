@@ -6,6 +6,7 @@
     "start": "react-native start"
   },
   "dependencies": {
-    "react-native": "^0.20.0"
+    "react-native": "^0.20.0",
+    "react-native-vector-icons": "^1.2.1"
   }
 }
