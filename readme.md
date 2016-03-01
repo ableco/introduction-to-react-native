@@ -15,7 +15,7 @@ Con React Native escribes código para Android y iOS, pero no todo el código es
 ### Flexbox
 Sí! React Native implementó flexbox, para poder trabajar los layouts de un modo mucho más simple e intuitivo.
 
-[Aquí](https://facebook.github.io/react-native/docs/flexbox.html) más detalles, y si no sabes estás familiarizado con flexbox, dale click [aquí](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+[Aquí](https://facebook.github.io/react-native/docs/flexbox.html) más detalles, y si no estás familiarizado con flexbox, dale click [aquí](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
 ### Javascript
 Y lo más hermoso de todo esto, es que puedes generar la lógica de tu aplicación usando Javascript. Y si eso no fuese suficiente, también puedes usar ES6.
