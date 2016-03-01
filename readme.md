@@ -32,3 +32,30 @@ En este repositorio encontraremos las siguientes ramas:
 - reactjs-lima-packages
 
 En cada commit podrás ver la evolución del código y su fácil implementación.
+
+## From scrath
+### Las dependencias
+Esto es lo que necesitas para comenzar con un proyecto.
+- Node >= v4
+- npm >= v2.14
+- react-native >= 0.18.1
+- watchman 4.1.0
+- Xcode >= 7.0
+
+Usaremos brew para facilitarnos la vida
+```
+brew install node
+brew install watchman
+npm install -g react-native-cli
+```
+Y luego iniciaremos nuestro proyecto
+```
+react-native init mySweetProject --verbose
+```
+Deberías de obtener una pantalla de confirmación, luego vas al directorio creado y ejecutas:
+```
+open ios/mySweetProject.xcodeproj
+```
+corres el simulador y listo
+
+![](http://i.imgur.com/foiqeBh.png)
