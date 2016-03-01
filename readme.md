@@ -115,3 +115,5 @@ Algo de código
 > Nota: Podemos agregar estilos a partir de la propiedad style, declarando un constructor(create), en este caso, styles. Más detalles, [aquí](https://facebook.github.io/react-native/docs/style.html#content)
 
 Puedes ver el código [aquí](https://github.com/paulrrdiaz/introduction-to-react-native/blob/reactjs-lima-components/index.ios.js), moverte al branch **reactjs-lima-components** y actualizar tu simulador para verlo en vivo.
+
+![](http://imgur.com/S6jJIHR.jpg)
