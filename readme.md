@@ -2,6 +2,9 @@
 Parte de la filosofía de [Able](http://able.co) nos dice que nunca debemos dejar de aprender, así que decidimos ahondar en el mundo de React Native y los resultados fueron muy prometedores.
 [Aquí](https://docs.google.com/presentation/d/1nNAv3F9WiSXO9vwszArmsrVBzlUEe3JIFe_3sqjbOtY/edit?usp=sharing) tienes la presentación, en donde encontrarás una guía de como inicializar todo esto.
 
+## ¿Qué es?
+Es un framework para construir aplicaciones nativas usando Javascript y React.
+
 ## ¿Por qué React Native?
 No somos iOS developers, pero con conocimientos básicos de *Swift y Objective C* (casi nulos) y sintiéndonos cómodos sobre tecnologías como Ruby y Javascript; decidímos aprovechar nuestra experiencia con Reactjs y notamos esto:
 
@@ -22,6 +25,8 @@ Y lo más hermoso de todo esto, es que puedes generar la lógica de tu aplicaci�
 
 ## Kick off this
 En este repositorio encontraremos las siguientes ramas:
+
+> Nota: solo compilaremos para iOS en esta introducción.
 
 - reactjs-lima-components
 - reactjs-lima-components-list-view
@@ -48,17 +53,25 @@ brew install node
 brew install watchman
 npm install -g react-native-cli
 ```
-Y luego iniciaremos nuestro proyecto
+Y luego clonaremos nuestro proyecto
 ```
-react-native init mySweetProject --verbose
+git clone git@github.com:paulrrdiaz/introduction-to-react-native.git
 ```
-**btw: si clonas este repositorio, en lugar de la línea de arriba deberás de ejecutar en el directorio clonado**
+vamos al directorio creado y ejecutamos
 ```
 npm install
 ```
+
+> Nota: si quieres comenzar un proyecto desde cero, te recomiendo la siguiente línea
+>```
+>react-native init mySweetProject --verbose
+>```
+
 Deberías de obtener una pantalla de confirmación, luego vas al directorio y verás la siguiente estructura:
 
 ![](http://imgur.com/tAYKPz2.jpg)
+
+> Nota: existen dos archivos index(index.android.js / index.ios.js), esto se debe a que cada plataforma utiliza el que le corresponde; por ejemplo, cierto componente funcionará de diferente forma para cada plataforma, solo debemos crear componente.android.js y componente.ios.js. Sweet, right?
 
 ahora ejecuta:
 ```
@@ -66,9 +79,9 @@ open ios/mySweetProject.xcodeproj
 ```
 corres el simulador y listo
 
-![](http://i.imgur.com/dOKBJeG.jpg)
+![](http://imgur.com/SJxaJIx.jpg)
 
-**también puedes ver la documentación oficial [aquí](https://facebook.github.io/react-native/docs/getting-started.html#content)**
+también puedes ver la documentación oficial [aquí](https://facebook.github.io/react-native/docs/getting-started.html#content)
 
 ### Componentes (reactjs-lima-components / reactjs-lima-components-list-view)
 Para comenzar, veremos los componentes más básicos, en el camino iremos conociendo más y más componentes.
@@ -81,6 +94,9 @@ div | View
 img | Image
 span, p | Text
 ul/ol, li | ListView, child items
+
+#### Text
+Un componente para mostrar texto, entre sus propiedades más llamativas: anidamiento, estilos, limite de lineas y
 
 Algo de código
 
